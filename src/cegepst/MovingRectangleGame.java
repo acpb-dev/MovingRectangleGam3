@@ -2,22 +2,20 @@ package cegepst;
 
 import cegepst.engine.Buffer;
 import cegepst.engine.Game;
-
-import java.awt.*;
 import java.util.ArrayList;
 
 public class MovingRectangleGame extends Game {
 
     private Player player;
-    private InputHandler inputHandler;
+    private GameController controller;
     private ArrayList<FootPrint> footPrints;
 
     public MovingRectangleGame() {
-        inputHandler = new InputHandler();
-        player = new Player (inputHandler);
+        controller = new GameController();
+        player = new Player (controller);
 
         footPrints = new ArrayList<>();
-        super.addKeyListener(inputHandler);
+        super.addKeyListener(controller);
     }
 
     @Override
@@ -31,11 +29,11 @@ public class MovingRectangleGame extends Game {
 
     @Override
     public void update() {
-        if (inputHandler.isQuitPressed()) {
+        if (controller.isQuitPressed()) {
             super.stop();
         }
         player.update();
-        if (inputHandler.isMoving()) {
+        if (controller.isMoving()) {
             footPrints.add(player.layFootprint());
         }
     }

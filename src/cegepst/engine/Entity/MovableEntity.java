@@ -1,5 +1,7 @@
 package cegepst.engine.Entity;
 
+import cegepst.engine.controls.Direction;
+
 public abstract class MovableEntity extends  UpdateTableEntity {
 
 

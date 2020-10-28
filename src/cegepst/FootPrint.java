@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class FootPrint extends StaticEntity {
 
-    private int width = 30;
-    private int height = 30;
+    private int width = 3;
+    private int height = 3;
 
     public FootPrint(int x, int y) {
         setDimension(5, 5);

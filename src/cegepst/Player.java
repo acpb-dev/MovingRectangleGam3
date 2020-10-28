@@ -2,13 +2,15 @@ package cegepst;
 
 import cegepst.engine.Buffer;
 import cegepst.engine.Entity.ControllableEntity;
+import cegepst.engine.controls.Controller;
+import cegepst.engine.controls.MovementController;
 
 import java.awt.*;
 
 public class Player extends ControllableEntity {
 
-    public Player(InputHandler inputHandler) {
-        super(inputHandler);
+    public Player(MovementController controller) {
+        super(controller);
         super.setDimension(30, 30);
         super.teleport(100, 100);
         super.setSpeed(4);
